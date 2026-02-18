@@ -57,13 +57,14 @@ body {
 .mylearning__pop{
     position: absolute;
     background-color: white;
-    border: solid gray 1px;
+    /* border: solid gray 1px; */
     width: 200px;
     top:30px;
     padding: 15px;
     right: 0px;
     display: none;
     border-radius: 10px;
+    box-shadow: rgba(217, 184, 184, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .mylearning:hover .mylearning__pop{
     display: block;
@@ -81,6 +82,7 @@ body {
     justify-content: space-between;
     border-bottom: solid black 1px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .categories p {
@@ -88,6 +90,14 @@ body {
     border-radius: 30px;
     padding: 10px;
     color: white;
+    border: solid violet 1px;
+}
+
+.categories p:hover{
+    transition: 1s;
+    background-color: #bf89e3;
+    color: black;
+    border: solid violet 1px;
 }
 
 .student-image img {
@@ -110,8 +120,23 @@ body {
     top:100px;
     margin: 10px;
     left: 100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
+@keyframes zoom{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 .student-image__offer h1{
     margin-bottom: 10px;
 }
