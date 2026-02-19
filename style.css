@@ -50,6 +50,10 @@ body {
     align-items: center;
 }
 
+.navbar__s4{
+    display:none;
+}
+
 .mylearning{
     position: relative;
     cursor: pointer;
@@ -57,10 +61,9 @@ body {
 .mylearning__pop{
     position: absolute;
     background-color: white;
-    /* border: solid gray 1px; */
     width: 200px;
     top:30px;
-    padding: 15px;
+    padding: 10px;
     right: 0px;
     display: none;
     border-radius: 10px;
@@ -70,7 +73,7 @@ body {
     display: block;
 }
 .mylearning__pop .btn1{
-    padding: 10px;
+    padding: 5px;
     background-color: violet;
     border: none;
     border-radius: 5px;
@@ -102,7 +105,8 @@ body {
 
 .student-image img {
     width: 100%;
-    height: 450px;
+    height: auto;
+    display: block;
 }
 .student-image{
     position: relative;
@@ -110,21 +114,17 @@ body {
 
 .student-image__offer{
     background-color: white;
-    width: 400px;
-    height: 150px;
-    /* border: solid black 2px; */
-    padding: 20px;
-    margin: 10px;
+    width: 25%;
+    padding: 10px;
     border-radius: 10px;
     position: absolute;
-    top:100px;
-    margin: 10px;
-    left: 100px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    top: 30%;
+    left: 10%;
+    box-shadow: rgba(0,0,0,0.16) 0px 10px 36px;
     animation-name: zoom;
     animation-duration: 2s;
-    opacity: 0;
     animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 @keyframes zoom{
@@ -138,17 +138,16 @@ body {
     }
 }
 .student-image__offer h1{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .student-image__offer button{
-    padding: 10px;
+    padding: 5px;
     background-color: violet;
     border: none;
     border-radius: 5px;
-    margin-top : 20px;
+    margin-top : 10px;
 }
-
 
 .recommended {
     padding: 10px;
@@ -162,8 +161,9 @@ body {
 }
 
 .course_card {
-    width: 350px;
-
+    flex-grow: 1;
+    flex-basis : 20%;
+    margin: 10px;
 }
 
 .course_card img {
@@ -224,3 +224,43 @@ body {
     align-items: center;
 }
 
+@media screen and (max-width:900px){
+    body{
+        font-size: 10px;
+    }    
+    .student-image__offer{
+        top:20%;
+        font-size: 13px;
+    }
+     .student-image__offer button{
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .course_card{
+        flex-basis: 40%;
+    }
+    .categories{
+        display: none;
+    }
+    .navbar__s2,.navbar__s3{
+        display: none;
+    }
+    .navbar__s4{
+        display: block;
+    }
+    .student-image__offer button{
+        display: none;
+    }
+    .student-image__offer h1{
+        font-size: 10px;
+    }  
+    .student-image__offer p{
+        font-size: 8px;
+    } 
+    .student-image__offer{
+        top:10%
+    }
+     
+}
